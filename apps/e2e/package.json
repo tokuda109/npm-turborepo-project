@@ -1,0 +1,17 @@
+{
+  "name": "e2e",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "16",
+    "npm": "8"
+  },
+  "scripts": {
+    "run": "npx start-server-and-test 'npx serve ../../dist' http://localhost:3000 'cypress run'",
+    "lint": "echo e2e#lint"
+  },
+  "devDependencies": {
+    "cypress": "9.2.1"
+  }
+}

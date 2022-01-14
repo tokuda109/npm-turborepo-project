@@ -1,0 +1,44 @@
+{
+  "name": "npm-turborepo-project",
+  "private": true,
+  "engines": {
+    "node": "16",
+    "npm": "8"
+  },
+  "volta": {
+    "node": "16.13.1",
+    "npm": "8.1.2"
+  },
+  "workspaces": [
+    "apps/app",
+    "apps/e2e"
+  ],
+  "turbo": {
+    "baseBranch": "origin/main",
+    "npmClient": "npm",
+    "pipeline": {
+      "app#build": {
+        "outputs": [
+          "apps/app/.nuxt/**",
+          "dist/**"
+        ]
+      },
+      "app#generate": {
+        "dependsOn": ["app#build"]
+      },
+      "app#dev": {
+        "cache": false
+      },
+      "app#start": {
+        "dependsOn": ["app#build"]
+      },
+      "e2e#run": {
+        "dependsOn": ["app#generate"]
+      },
+      "lint": {}
+    }
+  },
+  "devDependencies": {
+    "turbo": "1.0.28"
+  }
+}

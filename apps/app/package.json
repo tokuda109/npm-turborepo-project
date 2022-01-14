@@ -1,0 +1,20 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": "16",
+    "npm": "8"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "nuxt start",
+    "lint": "echo app#lint"
+  },
+  "dependencies": {
+    "nuxt": "2.15.8"
+  }
+}
