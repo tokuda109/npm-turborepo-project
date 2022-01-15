@@ -18,13 +18,11 @@
     "npmClient": "npm",
     "pipeline": {
       "app#build": {
-        "outputs": [
-          "apps/app/.nuxt/**",
-          "dist/**"
-        ]
+        "outputs": ["apps/app/.nuxt/**"]
       },
       "app#generate": {
-        "dependsOn": ["app#build"]
+        "dependsOn": ["app#build"],
+        "outputs": ["dist/**"]
       },
       "app#dev": {
         "cache": false
